@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7a5s7f5g3d6q"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_gkqpm"]
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="2_1c8wq"]
+[ext_resource type="PackedScene" path="res://scenes/Car.tscn" id="3_3h2wa"]
+[ext_resource type="PackedScene" path="res://scenes/NPC.tscn" id="4_d4j5a"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_gkqpm")
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_right = 1600.0
+offset_bottom = 900.0
+color = Color(0.11, 0.31, 0.18, 1)
+
+[node name="MissionMarker" type="Marker2D" parent="."]
+position = Vector2(940, 540)
+
+[node name="Player" parent="." instance=ExtResource("2_1c8wq")]
+position = Vector2(190, 260)
+
+[node name="Car" parent="." instance=ExtResource("3_3h2wa")]
+position = Vector2(480, 360)
+
+[node name="NPC1" parent="." instance=ExtResource("4_d4j5a")]
+position = Vector2(310, 160)
+
+[node name="NPC2" parent="." instance=ExtResource("4_d4j5a")]
+position = Vector2(760, 180)
+
+[node name="NPC3" parent="." instance=ExtResource("4_d4j5a")]
+position = Vector2(1100, 240)
+
+[node name="NPC4" parent="." instance=ExtResource("4_d4j5a")]
+position = Vector2(780, 620)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="MoneyLabel" type="Label" parent="HUD"]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 290.0
+offset_bottom = 60.0
+text = "Argent : 500 $"
+label_settings = null
+
+[node name="HeatLabel" type="Label" parent="HUD"]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 290.0
+offset_bottom = 90.0
+text = "Police : 0\u00b0"
+
+[node name="ObjectiveLabel" type="Label" parent="HUD"]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 90.0
+offset_right = 700.0
+offset_bottom = 130.0
+text = "Objectif : Trouve la voiture et va jusqu'au point de livraison."
+
+[node name="TimeLabel" type="Label" parent="HUD"]
+anchors_preset = 0
+offset_left = 1120.0
+offset_top = 20.0
+offset_right = 1250.0
+offset_bottom = 60.0
+text = "08:00"
+
+[node name="InfoLabel" type="Label" parent="HUD"]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 650.0
+offset_right = 1200.0
+offset_bottom = 700.0
+text = "Appuie sur E pour entrer dans un véhicule."

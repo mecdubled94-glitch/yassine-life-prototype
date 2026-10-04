@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://k1j2z9x4a6f5"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_6r7lk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1"]
+radius = 9.0
+height = 18.0
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_6r7lk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1")
+
+[node name="Body" type="Polygon2D" parent="."]
+color = Color(0.27, 0.63, 0.39, 1)
+polygon = PackedVector2Array(-10, -12, 10, -12, 12, 12, -12, 12)
+
+[node name="Head" type="Polygon2D" parent="."]
+position = Vector2(0, -18)
+color = Color(0.95, 0.8, 0.57, 1)
+polygon = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
